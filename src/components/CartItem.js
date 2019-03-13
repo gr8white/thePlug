@@ -18,37 +18,33 @@ const CartItem = (item) => {
   }
   
   return (
-    <div class="box" key={item.id}>
-      <nav class="level">
+    <div className="box" key={item.id}>
+      <nav className="level">
         {/* <!-- Left side --> */}
-        <div class="level-left">
-          <div class="level-item">
-            <a class="delete is-large column" onClick={()=>{handleRemove(item.id)}}/>
+        <div className="level-left">
+          <div className="level-item">
+            <button className="delete is-large column" onClick={()=>{handleRemove(item.id)}}/>
           </div>
-          <div class="level-item" style="margin-left: 25px">
-            <figure class="image is-128x128" style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        "> 
-              <img src={item.img} alt={item.img} class="" style="
-              flex-shrink: 0;
-              min-width: 100%
-          "/>
+          <div className="level-item" style={{marginLeft: '25px'}}>
+            <figure className="image is-128x128" style=
+            {{display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'hidden'}}> 
+              <img src={item.img} alt={item.img} className="" style={{flexShrink: 0, minWidth: '100%'}}/>
             </figure>
           </div>
-          <div class="level-item has-text-left">
+          <div className="level-item has-text-left">
             <div>
-              <p class="title">{item.title}</p>
-              <p class="heading">Price: ${item.price}</p>
+              <p className="title">{item.title}</p>
+              <p className="heading">Price: ${item.price}</p>
             </div>
           </div>
         </div>
         {/* <!-- Right side --> */}
-        <div class="level-right">
-          <p class="heading">Quant:</p>
-          <input type="number" value={item.quantity} name="quantity" min="1" max="5"/>
+        <div className="level-right">
+          <p className="heading">Quant:</p>
+          <input type="number" value={item.quantity} readOnly name="quantity" min="1" max="5"/>
         </div>
       </nav>
     </div>
@@ -57,7 +53,7 @@ const CartItem = (item) => {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.cartReducer.cartItems
+    items: state.cartItems
   }
 }
 const mapDispatchToProps = (dispatch)=>{

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import SneakerCard from './SneakerCard';
 
-
 class Shop extends Component{
   render(){
     return(
@@ -10,10 +9,8 @@ class Shop extends Component{
         <div className="column is-11" style={{marginTop: 1.5 + 'em'}}>
           <div className="container">
             <div className="columns is-multiline" >
-            {this.props.items.map( (item) =>
-            <SneakerCard
-              {...item}
-            />
+            {this.props.items.map(item=>
+              <SneakerCard {...item}/>
             )}
             </div>
           </div>
@@ -24,8 +21,8 @@ class Shop extends Component{
 }
 const mapStateToProps = (state) => {
   return {
-    items: state.itemsReducer.items
+    items: state.sneakers.items
   }
 }
 
-export default connect(mapStateToProps)(Shop)
+export default connect(mapStateToProps, null)(Shop)

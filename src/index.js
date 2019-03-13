@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import './index.css'
-import rootReducer from './components/reducers/rootReducer.js';
+import cartReducer from './components/reducers/cartReducer.js';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(cartReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(<Provider store={store} ><App /></Provider>, document.getElementById('root'));

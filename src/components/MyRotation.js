@@ -54,12 +54,10 @@ class MyRotation extends Component{
 }
 const mapStateToProps = (state) => {
   return {
-    items: state.itemsReducer.items
+    items: state.sneakers.items
   }
 }
-const mapDispatchToProps= (dispatch)=>{
-  return{
-    addToCart: (id)=>{dispatch(addToCart(id))}
-  }
-}
+const mapDispatchToProps = (dispatch)=>({
+  addToCart: (id) => { dispatch(addToCart(id)); }
+})
 export default connect(mapStateToProps, mapDispatchToProps)(MyRotation)

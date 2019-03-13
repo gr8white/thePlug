@@ -36,7 +36,7 @@ const SneakerCard = (item) => {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.itemsReducer.items
+    items: state.sneakers.items
   }
 }
 const mapDispatchToProps = (dispatch)=>{
