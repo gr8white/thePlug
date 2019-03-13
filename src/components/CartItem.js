@@ -5,17 +5,17 @@ import { removeItem, addQuantity, subtractQuantity } from './actions/cartActions
 const CartItem = (item) => {
   
   //to remove the item completely
-  let handleRemove = (id)=>{
-    this.props.removeItem(id);
+  let handleClick = (id)=>{
+    item.removeItem(id);
   }
-  //to add the quantity
-  let handleAddQuantity = (id)=>{
-    this.props.addQuantity(id);
-  }
-  //to substruct from the quantity
-  let handleSubtractQuantity = (id)=>{
-    this.props.subtractQuantity(id);
-  }
+  // //to add the quantity
+  // let handleAddQuantity = (id)=>{
+  //   this.props.addQuantity(id);
+  // }
+  // //to substruct from the quantity
+  // let handleSubtractQuantity = (id)=>{
+  //   this.props.subtractQuantity(id);
+  // }
   
   return (
     <div className="box" key={item.id}>
@@ -23,7 +23,7 @@ const CartItem = (item) => {
         {/* <!-- Left side --> */}
         <div className="level-left">
           <div className="level-item">
-            <button className="delete is-large column" onClick={()=>{handleRemove(item.id)}}/>
+            <button className="delete is-large column" onClick={()=>{handleClick(item.id)}}/>
           </div>
           <div className="level-item" style={{marginLeft: '25px'}}>
             <figure className="image is-128x128" style=
