@@ -1,4 +1,6 @@
-import { ADD_TO_CART,ADD_TO_ROTATION,REMOVE_FROM_ROTATION} from './action-types/sneaker-actions'
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const ADD_TO_ROTATION = 'ADD_TO_ROTATION';
+export const REMOVE_FROM_ROTATION = 'REMOVE_FROM_ROTATION';
 
 export const addToCart= (id)=>{
   return{
