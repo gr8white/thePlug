@@ -18,35 +18,23 @@ const CartItem = (item) => {
   // }
   
   return (
-    <div className="box" key={item.id}>
-      <nav className="level">
-        {/* <!-- Left side --> */}
-        <div className="level-left">
+    <div className="box cart-item level" key={item.id}>
+      
+        {/* <div className="level-left"> */}
+          <button className="delete is-large level-item" onClick={()=>{handleClick(item.id)}}/>
           <div className="level-item">
-            <button className="delete is-large column" onClick={()=>{handleClick(item.id)}}/>
-          </div>
-          <div className="level-item" style={{marginLeft: '25px'}}>
-            <figure className="image is-128x128" style=
-            {{display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden'}}> 
+            <figure className="image is-128x128 sneakerPhoto"> 
               <img src={item.img} alt={item.img} className="" style={{flexShrink: 0, minWidth: '100%'}}/>
             </figure>
           </div>
-          <div className="level-item has-text-left">
-            <div>
-              <p className="title">{item.title}</p>
-              <p className="heading">Price: ${item.price}</p>
-            </div>
-          </div>
-        </div>
-        {/* <!-- Right side --> */}
+          <p className="sneakerName is-5 level-item">{item.title}</p>
+          <p className="level-item">Price: ${item.price}</p>
+        {/* </div> */}
+        
         <div className="level-right">
-          <p className="heading">Quant:</p>
-          <input type="number" value={item.quantity} readOnly name="quantity" min="1" max="5"/>
+          <p className="level-item">Quant:</p>
+          <input className="level-item"type="number" value={item.quantity} readOnly name="quantity" min="1" max="5"/>
         </div>
-      </nav>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import CartItem from './CartItem';
+import Shipping from './Shipping'
 import { removeItem, addQuantity, subtractQuantity } from './actions/cartActions'
 
 class Cart extends Component{
@@ -21,19 +22,18 @@ class Cart extends Component{
   render(){
     return(
       <div className="container">
-        <div className="box">
+        <h5>You have ordered</h5>
           <div className="columns is-centered">
-            <div className="column is-6">   
+            <div className="column is-8">   
             {this.props.items.length ?
               this.props.items.map( (item) =>
               <CartItem
                 {...item}
-                onPress={() => this.props.handleRemove()}
-              />
-              ): (<p>Please add something to your cart.</p>)}
+                onPress={() => this.props.handleRemove()} />
+              ) : (<p>Please add something to your cart.</p>)}
             </div>
-          </div>
         </div>
+        <Shipping />
       </div>
     )
   }

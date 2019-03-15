@@ -50,8 +50,9 @@ const itemsReducer = {
     {id:22,title:'vansOldSkool', price:260,img:Item22},
     {id:23,title:'vansYachtClub', price:160,img:Item23},
     {id:24,title:'yeezyStatic', price:900,img:Item24},
-    {id:25,title:'nikeDunkPigeon', price:900,img:Item25},
-  ]
+    {id:25,title:'nikeDunkPigeon', price:900,img:Item25}
+  ],
+  addRemovePhrase: ""
 } 
 
 export default itemsReducer

@@ -1,29 +1,57 @@
 import React, { Component } from 'react'
-import { addToCart } from './actions/cartActions'
+import { addToCart, addToRotation, removeFromRotation } from './actions/sneakerActions'
 import { connect } from 'react-redux'
 
 const SneakerCard = (item) => {
   
-  let handleClick = (id) => {
+  let handleAddToCart = (id) => {
     item.addToCart(id);
+  }
+
+  let handleAddToRotation = (id) => {
+    item.addToRotation(id);
+  }
+
+  let handleRemoveFromRotation = (id) => {
+    item.removeFromRotation(id);
+  }
+
+  let AddToRotationButton = (props) => {
+    return (
+      <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleAddToRotation(item.id)}}>
+        {item.addRemovePhrase} Rotation
+    </p> )
+  }
+
+  let RemoveFromRotationButton = (props) => {
+    return (
+      <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleRemoveFromRotation(item.id)}}>
+        {item.addRemovePhrase} Rotation
+    </p> )
+  }
+
+  let WhichButton = (props) => {
+    const rotationButton = props.rotationButton;
+    if (rotationButton) {
+      return <AddToRotationButton />
+    } else {
+      return <RemoveFromRotationButton />
+    }
   }
 
   return (
     <div className="column is-3" key={item.id}>
-      <div className="box">
-        <figure className="image sneakerPhoto">
+      <div className="card">
+        <figure className="image sneakerPhoto is-5by3">
           <img src={item.img} alt={item.title}/>
         </figure>
         <div className="card-content">
-          <p className="title is-4">{item.title}</p>
-          <p className="subtitle is-6"><b>Price: ${item.price}</b></p>
-          <p className="subtitle is-8">{item.desc}</p>
+          <p className="title is-5">{item.title}</p>
+          <p className="subtitle is-7"><b>Price: ${item.price}</b></p>
         </div>
         <footer className="card-footer">
-          <p className="card-footer-item has-text-centered">
-            Add to Rotation
-          </p>
-          <p className="card-footer-item button is-white" style={{height: 48 + 'px'}} onClick={()=>{handleClick(item.id)}}>
+          <WhichButton rotationButton={item.rotationButton}/>
+          <p className="card-footer-item button is-white cart-icon" style={{height: 48 + 'px'}} onClick={()=>{handleAddToCart(item.id)}}>
             <span>
               <i className="fa fa-shopping-cart"></i>
             </span>
@@ -41,7 +69,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch)=>{
   return{
-    addToCart: (id)=>{dispatch(addToCart(id))}
+    addToCart: (id)=>{dispatch(addToCart(id))},
+    addToRotation: (id)=>{dispatch(addToRotation(id))},
+    removeFromRotation: (id)=>{dispatch(removeFromRotation(id))}
   }
 }
 

@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () =>{
   return(
-    <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-primary level" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
+          {/* <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/> */}
+          <Link to="/" className="brand-logo">Shopping</Link>
         </a>
         <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>

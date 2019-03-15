@@ -37,10 +37,27 @@
 }
 
 .sneakerPhoto {
-  height: 100px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .sneakerPhoto img {
-  max-height: 100%;
-  max-width: 100%;
+  /* height: 100px;
+  width: 100%; */
+  object-fit: contain
+}
+
+.sneakerName {
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.cart-item {
+  justify-content: space-around
+}
+
+.rotationButton {
+  height: 48px
 }

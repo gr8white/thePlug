@@ -1,12 +1,41 @@
 import itemsReducer from './itemsReducer'
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY } from '../actions/action-types/cart-actions'
+import { REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY } from '../actions/action-types/cart-actions'
+import { ADD_TO_CART,ADD_TO_ROTATION, REMOVE_FROM_ROTATION } from '../actions/action-types/sneaker-actions'
 
 const initState = {
   sneakers: {...itemsReducer},
+  rotationItems: [],
   cartItems:[],
   total: 0
 }
 const cartReducer = (state = initState, action)=>{
+  //ADD TO ROTATION function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if(action.type === ADD_TO_ROTATION){
+    let newItem = state.sneakers.items.find(item=> item.id === action.id)
+    //check if the action id exists in the rotationItems
+    let existed_item = state.rotationItems.find(item => action.id === item.id)
+    if(existed_item) {
+      return
+    } else {
+      newItem.quantity = 1; 
+      return{
+        ...state,
+        rotationItems: [...state.rotationItems, newItem]
+      }
+    }
+  }
+
+  //REMOVE FROM CART function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if(action.type === REMOVE_FROM_ROTATION){
+    let itemToRemove= state.rotationItems.find(item=> action.id === item.id)
+    let new_items = state.rotationItems.filter(item=> action.id !== item.id)
+    console.log(itemToRemove)
+    return{
+      ...state,
+      rotationItems: new_items
+    }
+  }
+  
   //ADD TO CART function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   if(action.type === ADD_TO_CART){
     let newItem = state.sneakers.items.find(item=> item.id === action.id)
