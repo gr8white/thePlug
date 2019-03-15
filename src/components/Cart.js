@@ -21,7 +21,7 @@ class Cart extends Component{
 
   render(){
     return(
-      <div className="container">
+      <div className="container" style={{marginTop: 5.5 + 'em'}}>
         <h5>You have ordered</h5>
           <div className="columns is-centered">
             <div className="column is-8">   

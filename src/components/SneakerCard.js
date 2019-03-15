@@ -41,7 +41,7 @@ const SneakerCard = (item) => {
 
   return (
     <div className="column is-3" key={item.id}>
-      <div className="card">
+      <div className="card sneakerCard">
         <figure className="image sneakerPhoto is-5by3">
           <img src={item.img} alt={item.title}/>
         </figure>

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import logo from './images/sneaker-images/logo-gif/2w4o22.gif'
 
 
 const Navbar = () =>{
   return(
-    <nav className="navbar is-primary level" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-primary level is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
-          {/* <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/> */}
-          <Link to="/" className="brand-logo">Shopping</Link>
+          <img src={logo} width='.87rem'/>
+          <Link to="/" className="navbar-item"><strong>thePlug</strong></Link>
         </a>
+        
         <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -18,7 +20,7 @@ const Navbar = () =>{
       </div>
       <div className="navbar-menu">
         <div className="navbar-start">
-          <Link to="/" className="navbar-item">
+          <Link to="/" className="navbar-item" style={{marginLeft: 50 + 'px'}}>
             Shop
           </Link>
           <Link to="/myrotation" className="navbar-item">

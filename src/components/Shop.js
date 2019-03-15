@@ -6,7 +6,7 @@ class Shop extends Component{
   render(){
     return(
       <div className="columns is-centered is-mobile is-multiline">
-        <div className="column is-11" style={{marginTop: 1.5 + 'em'}}>
+        <div className="column is-11" style={{marginTop: 5.5 + 'em'}}>
           <div className="container">
             <div className="columns is-multiline" >
             {this.props.items.map(item=>
