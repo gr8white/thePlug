@@ -45,7 +45,7 @@ const SneakerCard = (item) => {
         <figure className="image sneakerPhoto is-5by3">
           <img src={item.img} alt={item.title}/>
         </figure>
-        <div className="card-content">
+        <div className="card-content" style={{height: 111 + 'px'}}>
           <p className="title is-5">{item.title}</p>
           <p className="subtitle is-7"><b>Price: ${item.price}</b></p>
         </div>
