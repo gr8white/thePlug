@@ -8,14 +8,6 @@ const CartItem = (item) => {
   let handleClick = (id)=>{
     item.removeItem(id);
   }
-  // //to add the quantity
-  // let handleAddQuantity = (id)=>{
-  //   this.props.addQuantity(id);
-  // }
-  // //to substruct from the quantity
-  // let handleSubtractQuantity = (id)=>{
-  //   this.props.subtractQuantity(id);
-  // }
   
   return (
     <div className="box cart-item level" key={item.id}>
