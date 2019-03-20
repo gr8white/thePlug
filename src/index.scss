@@ -1,3 +1,7 @@
+
+@import "bulma";
+@import "~bulma-accordion/src/sass/index.sass";
+
 .box{
   display: flex;
   justify-content: space-between;
@@ -62,6 +66,20 @@
   height: 48px
 }
 
-.sneakerCard {
-  height: 322px
+.filterBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5.5rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.sizeButtons {
+  padding: 16px 20px
+}
+
+.sneakerCardHolder {
+  display: block;
 }

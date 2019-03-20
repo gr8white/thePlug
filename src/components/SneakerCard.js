@@ -19,14 +19,14 @@ const SneakerCard = (item) => {
   let AddToRotationButton = (props) => {
     return (
       <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleAddToRotation(item.id)}}>
-        {item.addRemovePhrase} Rotation
+        {item.addRemovePhrase}  Rotation
     </p> )
   }
 
   let RemoveFromRotationButton = (props) => {
     return (
       <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleRemoveFromRotation(item.id)}}>
-        {item.addRemovePhrase} Rotation
+        {item.addRemovePhrase} <br/> Rotation
     </p> )
   }
 
