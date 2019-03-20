@@ -24,7 +24,7 @@ class MyRotation extends Component{
                       addRemovePhrase="Remove From"
                       rotationButton={false}
                       />
-                    ) : ( null )}
+                    ) : ( <h2 style={{marginLeft: 12 + 'px', marginBottom: 10 + 'px'}}>Add sneakers to your rotation to view them here.</h2> )}
                   </div>
                 </div>
               </div>

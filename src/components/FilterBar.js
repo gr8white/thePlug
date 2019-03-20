@@ -20,41 +20,41 @@ class FilterBar extends Component{
               <div className="accordion-content">
                 <div className="columns">
                   <div className="column">
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Nike
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Jordan
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Vans
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Fear of God
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Kith
                     </label>
                   </div>
                   <div className="column">
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Adidas
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Converse
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Off-White
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Yeezy
                     </label>
@@ -71,41 +71,41 @@ class FilterBar extends Component{
               <div className="accordion-content">
                 <div className="columns">
                   <div className="column">
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Black
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Yellow
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Red
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Green
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Multi-Color
                     </label>
                   </div>
                   <div className="column">
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       White
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Blue
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Green
                     </label>
-                    <label class="checkbox">
+                    <label className="checkbox">
                       <input type="checkbox"/>
                       Pink
                     </label>
@@ -141,27 +141,27 @@ class FilterBar extends Component{
             </div>
             <div className="accordion-body">
               <div className="accordion-content">
-                <label class="checkbox">
+                <label className="checkbox">
                   <input type="checkbox"/>
                   $1000 +
                 </label>
                 <br/>
-                <label class="checkbox">
+                <label className="checkbox">
                   <input type="checkbox"/>
                   $500 - $999
                 </label>
                 <br/>
-                <label class="checkbox">
+                <label className="checkbox">
                   <input type="checkbox"/>
                   $350 - $499
                 </label>
                 <br/>
-                <label class="checkbox">
+                <label className="checkbox">
                   <input type="checkbox"/>
                   $100 - $349
                 </label>
                 <br/>
-                <label class="checkbox">
+                <label className="checkbox">
                   <input type="checkbox"/>
                   Under $99
                 </label>
@@ -169,7 +169,7 @@ class FilterBar extends Component{
             </div>
           </article>
         </section>
-        <button class="button is-fullwidth is-primary" style={{marginTop: 20 + 'px'}}>Set Filters</button>
+        <button className="button is-fullwidth is-primary" style={{marginTop: 20 + 'px'}}>Set Filters</button>
       </div>
     )
   }
