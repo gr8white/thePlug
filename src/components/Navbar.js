@@ -12,15 +12,15 @@ const Navbar = () =>{
           <Link to="/" className="navbar-item"><strong>thePlug</strong></Link>
         </a>
         
-        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" className="navbar-burger burger" data-target="navMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div className="navbar-menu">
+      <div className="navbar-menu" id="menu">
         <div className="navbar-start">
-          <Link to="/" className="navbar-item" style={{marginLeft: 50 + 'px'}}>
+          <Link to="/shop" className="navbar-item" style={{marginLeft: 50 + 'px'}}>
             Shop
           </Link>
           <Link to="/myrotation" className="navbar-item">
