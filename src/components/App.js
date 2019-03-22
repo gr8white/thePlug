@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <div className="App">
+        <div className="page-container">
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home}/>
@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/cart" component={Cart}/>
             <Route path="/myrotation" component={MyRotation}/>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </BrowserRouter>
     );

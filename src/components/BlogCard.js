@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-const HCItem = () => {
+const BlogCard = (item) => {
   return (
-    <div class="column is-one-fourth">
+    <div class="column is-one-fourth" key={item.id}>
       <div class="box">
         <div class="card-image">
           <figure class="image is-4by3">
@@ -10,10 +11,9 @@ const HCItem = () => {
           </figure>
         </div>
         <div class="card-content">
-          <h1 class="title is-4">Component</h1>
+          <h1 class="title is-4">{item.title}</h1>
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+            {item.body}<a>@bulmaio</a>.
             <a href="#">#css</a> <a href="#">#responsive</a>
           </div>
         </div>
@@ -23,4 +23,10 @@ const HCItem = () => {
   )
 }
 
-export default HCItem
+const mapStateToProps = (state) => {
+  return {
+    items: state.blogs.items
+  }
+}
+
+export default connect(mapStateToProps, null)(BlogCard)

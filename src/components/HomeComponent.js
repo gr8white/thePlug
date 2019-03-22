@@ -1,18 +1,52 @@
-import React from 'react'
-import HCItem from './HCItem'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import BlogCard from './BlogCard'
+import SneakerCard from './SneakerCard'
+import shuffle from './functions/functions'
 
-const HomeComponent = (props) => {
-  return (
-    <div class="box ">
-      <h1 class="title is-1">{props.title}</h1>
-      <div class="columns is-multiline">
-        <HCItem />
-        <HCItem />
-        <HCItem />
-        <HCItem />
+class HomeComponent extends Component {
+
+  render(){
+    return (
+    <div className="box ">
+      <h1 className="title is-1">{this.props.title}</h1>
+      <div className="columns is-multiline">
+      {this.props.title == "Shop" ? shuffle(this.props.sneakers).slice(0, 4).map(item=>
+        <SneakerCard 
+          {...item}
+          addRemovePhrase="Add To"
+          rotationButton= {true}
+        />)
+      :this.props.title == "Blog" ? this.props.blogs.slice(0, 4).map(item=>
+        <BlogCard 
+          {...item}
+        />)
+      :this.props.releases.slice(0, 4).map(item=>
+        <BlogCard 
+          {...item}
+        />)
+      } 
       </div>
     </div>
-  )
+    )
+  }
 }
 
-export default HomeComponent
+const mapStateToProps = (state) => {
+  return {
+    sneakers: state.sneakers.items,
+    blogs: state.blogs.items,
+    releases:state.releases.items
+  }
+}
+
+export default connect(mapStateToProps, null)(HomeComponent)
+
+{/* {this.props.items.length ?
+              this.props.items.map( (item) =>
+              <CartItem
+                {...item}
+                onPress={() => this.props.handleRemove()} />
+              ) : (<p>Please add something to your cart.</p>)}
+
+{/*    */}
