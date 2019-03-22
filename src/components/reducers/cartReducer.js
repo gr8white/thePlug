@@ -1,9 +1,13 @@
 import itemsReducer from './itemsReducer'
+import blogReducer from './blogReducer'
+import releaseReducer from './realeaseReducer'
 import { REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY } from '../actions/cartActions'
 import { ADD_TO_CART,ADD_TO_ROTATION, REMOVE_FROM_ROTATION } from '../actions/sneakerActions'
 
 const initState = {
   sneakers: {...itemsReducer},
+  blogs:{...blogReducer},
+  releases:{...releaseReducer},
   rotationItems: [],
   cartItems:[],
   total: 0

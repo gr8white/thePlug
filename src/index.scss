@@ -1,6 +1,7 @@
-
+@charset "utf-8";
 @import "bulma";
 @import "~bulma-accordion/src/sass/index.sass";
+@import "~bulma-carousel/src/sass/index.sass";
 
 .box{
   display: flex;
@@ -82,4 +83,44 @@ input[type="checkbox"] {
 
 .sneakerCardHolder {
   display: block;
+}
+
+.hero {
+  margin-top: 56px;
+}
+
+.has-bg-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url('./components/images/blog-images/best-sneaker-apps.jpg'); 
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed; 
+  background-position: center;
+}
+
+.homeBanner {
+  width: 50%;
+}
+
+.homeBanner > h1 {
+  color: white;
+}
+
+.topSpace {
+  margin-top: 1.5rem
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;            /* Footer height */
 }

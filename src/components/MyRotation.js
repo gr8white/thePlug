@@ -6,7 +6,7 @@ import FilterBar from './FilterBar'
 class MyRotation extends Component{
   render(){
     return(
-      <div className="page-wrapper" style={{marginTop: 5.5 + 'rem'}}>
+      <div className="page-wrapper content-wrap" style={{marginTop: 5.5 + 'rem'}}>
         <div className="columns is-centered" >
           <div className="column is-11" >
             <div className="columns" >
