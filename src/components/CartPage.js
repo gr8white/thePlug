@@ -21,10 +21,10 @@ class Cart extends Component{
 
   render(){
     return(
-      <div className="container" style={{marginTop: 5.5 + 'em'}}>
+      <div className="container" >
         <h5>You have ordered</h5>
           <div className="columns is-centered">
-            <div className="column is-8">   
+            <div className="column is-8" style={{marginTop: 56 + 'px'}}>   
             {this.props.items.length ?
               this.props.items.map( (item) =>
               <CartItem
