@@ -14,18 +14,18 @@ export default class Home extends Component {
             </div> 
           </div> 
         </section>
-          <div className="columns is-centered">
-            <div className="column is-11" >
-              <div className="columns topSpace">
-                <div className="column">
-                  <HomeComponent title="Blog"/>
-                  <HomeComponent title="Shop"/>
-                  <HomeComponent title="Release Dates"/>
-                </div>
+        <div className="columns is-centered">
+          <div className="column is-11" >
+            <div className="columns topSpace">
+              <div className="column">
+                <HomeComponent title="Blog"/>
+                <HomeComponent title="Shop"/>
+                <HomeComponent title="Release Dates"/>
               </div>
             </div>
           </div>
         </div>
+      </div>
     )
   }
 }

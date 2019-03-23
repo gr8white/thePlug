@@ -23,6 +23,9 @@ const Navbar = () =>{
           <Link to="/shop" className="navbar-item" style={{marginLeft: 50 + 'px'}}>
             Shop
           </Link>
+          <Link to="/news" className="navbar-item">
+            News
+          </Link>
           <Link to="/myrotation" className="navbar-item">
             MyRotation
           </Link>

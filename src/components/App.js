@@ -5,7 +5,8 @@ import Shop from './Shop'
 import Cart from './CartPage'
 import MyRotation from './MyRotation'
 import Home from './Home'
-import Footer from './Footer'
+import News from './News'
+
 
 class App extends Component {
   render() {
@@ -18,8 +19,8 @@ class App extends Component {
             <Route path="/shop" component={Shop}/>
             <Route path="/cart" component={Cart}/>
             <Route path="/myrotation" component={MyRotation}/>
+            <Route path="/news" component={News}/>
           </Switch>
-          {/* <Footer /> */}
         </div>
       </BrowserRouter>
     );
