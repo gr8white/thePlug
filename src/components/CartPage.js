@@ -21,19 +21,29 @@ class Cart extends Component{
 
   render(){
     return(
-      <div className="container" >
-        <h5>You have ordered</h5>
-          <div className="columns is-centered">
-            <div className="column is-8" style={{marginTop: 56 + 'px'}}>   
-            {this.props.items.length ?
-              this.props.items.map( (item) =>
-              <CartItem
-                {...item}
-                onPress={() => this.props.handleRemove()} />
-              ) : (<p>Please add something to your cart.</p>)}
+      <div className="page-wrapper" style={{marginTop: 3.5 + 'rem'}}>
+        <div className="columns is-centered">
+          <div className="column is-8" >
+            <div className="columns topSpace">
+              <div className="column">
+                <div className="box sneakerCardHolder">
+                  <h5 className='title'>Your Cart</h5>
+                  <div className="columns is-centered">
+                    <div className="column">   
+                        {this.props.items.length ?
+                          this.props.items.map( (item) =>
+                          <CartItem
+                            {...item}
+                            onPress={() => this.props.handleRemove()} />
+                          ) : (<p>Please add something to your cart.</p>)}
+                        </div>
+                    </div>
+                </div>
+                <Shipping />
+              </div>
             </div>
+          </div>
         </div>
-        <Shipping />
       </div>
     )
   }
