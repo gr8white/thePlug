@@ -21,19 +21,27 @@ class Shipping extends Component{
 
   render(){
     return(
-      <div className="container">
-        <div className="collection">
-          <li className="collection-item">
+      <div className="box" style={{display: 'block'}}>
+        <div className='level'>
+          <div className='level-left'>
+<div className=" level-item checkout">
+          <button className="button is-primary">Checkout</button>
+        </div>
+          </div>
+          <div className='level-right'>
+<div className="level-item collection " style={{display: 'block'}}>
+          <li className="collection-item " >
             <label>
               <input type="checkbox" ref="shipping" onChange= {this.handleChecked} />
               <span>Shipping(+$6)</span>
             </label>
           </li>
-          <li className="collection-item"><b>Total: {this.props.total} $</b></li>
+          <li className="collection-item"><b>Total: ${this.props.total}</b></li>
         </div>
-        <div className="checkout">
-          <button className="waves-effect waves-light btn">Checkout</button>
+          </div>
         </div>
+        
+        
       </div>
     )
   }
