@@ -1,41 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import * as Markdown from 'react-markdown'
-import moment from 'moment'
 
 const NewsCard = (props) => {
   return (
-    <div className="box">
-    <article className="media">
-      <div className="media-left">
-        <figure className="image is-64x64">
-          <img src={props.icon} alt="Image" />
+  <div className="column is-one-third modal-button" data-target="modal-card">
+    <div className="card is-shady newsCard">
+      <div className="card-image">
+        <figure className="image is-4by3">
+          <img src={props.icon} alt="Placeholder image"/>
         </figure>
       </div>
-      <div className="media-content">
+      <div className="card-content">
         <div className="content">
-    
-          <h1>{props.title}</h1>
-          <Markdown source={props.content.split(" ").splice(0,150).join(" ").concat('...')} />
-        </div>
-        <div className="level">
-          <div className="level-left">
-            <Link className="level-item button is-small is-link is-outlined" to={props.path}>Read More</Link>
-          </div>
-        <div className="level-right">
-          <p className="level-item has-text-link is-size-7">
-            {moment(props.date).calendar(null, {
-              sameDay: '[Today]',
-              lastDay: '[Yesterday]',
-              lastWeek: '[Last] dddd',
-              sameElse: 'MMM Do YYYY'
-            })}
-          </p>
+          <h4>{props.title}</h4>
+          <Markdown source={props.content.split(" ").splice(0,20).join(" ").concat('...')} />
+          <span className="button is-link modal-button">Modal card</span>
         </div>
       </div>
     </div>
-  </article>
-</div>
+  </div>
   )
 }
 

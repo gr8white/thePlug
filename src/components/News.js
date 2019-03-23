@@ -26,19 +26,24 @@ export class News extends Component {
 
   render() {
     return (
-      
-      <div>
-      <PageHeader color="is-info" title="Code Blog">
-  Your standard <strong>JavaScript</strong> programming blog, albeit, probably not very good, but I will at least try to keep it entertaining. This blog is a chronological mix of random posts on Angular, React, Functional Programming, and my <strong>project walkthroughs</strong>.
-</PageHeader>
-      <br/>
-      { this.state.posts.map(({fields}, i) =>
-        <NewsCard key={i} {...fields} />
-        )}
+
+    <div className="page-wrapper">
+      <PageHeader />
+      <div className="columns is-centered">
+        <div className="column is-11" >
+          <div className="columns topSpace">
+            <div className="column">
+              <div className="box sneakerCardHolder" >
+                <h1 className="title is-1">News</h1>
+                <div className="columns is-1 is-multiline">
+                  { this.state.posts.map(({fields}, i) =><NewsCard key={i} {...fields} />)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-      
     )
   }
 }
