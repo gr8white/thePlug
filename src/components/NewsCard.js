@@ -27,13 +27,13 @@ class NewsCard extends React.Component {
         <div className="card is-shady newsCard">
           <div className="card-image">
             <figure className="image is-4by3">
-              <img src={this.props.icon} alt="Placeholder image" className="newsCardImage"/>
+              <img src={this.props.icon} alt="Placeholder image" className="newsCardImage" style={{objectFit: 'cover'}}/>
             </figure>
           </div>
           <div className="card-content"  style={{height: 256 + 'px'}}>
             <div className="content newsCardContent">
               <h4>{this.props.title}</h4>
-              <Markdown source={this.props.content.split(" ").splice(0,20).join(" ").concat('...')} />
+              <Markdown source={this.props.content.split(" ").splice(1,20).join(" ").concat('...')} />
               <span className="button is-link modal-button" onClick={this.toggleModal}>Read Story</span>
             </div>
           </div>
