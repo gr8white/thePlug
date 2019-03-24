@@ -89,8 +89,8 @@ input[type="checkbox"] {
   margin-top: 56px;
 }
 
-.has-bg-img {
-  background: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url('./components/images/blog-images/best-sneaker-apps.jpg'); 
+.homeHero {
+  background: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url('https://static1.squarespace.com/static/57485e469f72667590961fa4/574da9a627d4bdf409c21944/574dab6a2fe1312030221d25/1464707959151/Sneaker_boxes_Assorted_1500.jpg?format=1000w'); 
   background-size:cover;
   background-repeat:no-repeat;
   background-attachment: fixed; 
@@ -101,7 +101,7 @@ input[type="checkbox"] {
   width: 50%;
 }
 
-.homeBanner > h1 {
+.homeBanner > h1, .homeBanner > h2 {
   color: white;
 }
 
@@ -127,4 +127,8 @@ input[type="checkbox"] {
 
 .newsCard {
   width: 410px
+}
+
+.newsCardContent > p {
+  height: 96px
 }
