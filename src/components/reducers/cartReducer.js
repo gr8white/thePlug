@@ -1,68 +1,13 @@
-import itemsReducer from './itemsReducer'
-import blogReducer from './blogReducer'
-import releaseReducer from './realeaseReducer'
 import { REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY } from '../actions/cartActions'
-import { ADD_TO_CART,ADD_TO_ROTATION, REMOVE_FROM_ROTATION } from '../actions/sneakerActions'
+
 
 const initState = {
-  sneakers: {...itemsReducer},
-  blogs:{...blogReducer},
-  releases:{...releaseReducer},
-  rotationItems: [],
+  // releases:{...releaseReducer},
+  // rotationItems: [],
   cartItems:[],
   total: 0
 }
 const cartReducer = (state = initState, action)=>{
-  //ADD TO ROTATION function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  if(action.type === ADD_TO_ROTATION){
-    let newItem = state.sneakers.items.find(item=> item.id === action.id)
-    //check if the action id exists in the rotationItems
-    let existed_item = state.rotationItems.find(item => action.id === item.id)
-    if(existed_item) {
-      return
-    } else {
-      newItem.quantity = 1; 
-      return{
-        ...state,
-        rotationItems: [...state.rotationItems, newItem]
-      }
-    }
-  }
-
-  //REMOVE FROM CART function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  if(action.type === REMOVE_FROM_ROTATION){
-    let itemToRemove= state.rotationItems.find(item=> action.id === item.id)
-    let new_items = state.rotationItems.filter(item=> action.id !== item.id)
-    console.log(itemToRemove)
-    return{
-      ...state,
-      rotationItems: new_items
-    }
-  }
-  
-  //ADD TO CART function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  if(action.type === ADD_TO_CART){
-    let newItem = state.sneakers.items.find(item=> item.id === action.id)
-    //check if the action id exists in the cartItems
-    let existed_item = state.cartItems.find(item => action.id === item.id)
-    if(existed_item) {
-      newItem.quantity += 1 
-      return{
-        ...state,
-        total: state.total + newItem.price 
-      }
-    } else {
-      newItem.quantity = 1;
-      //calculating the total
-      let newTotal = state.total + newItem.price  
-      return{
-        ...state,
-        cartItems: [...state.cartItems, newItem],
-        total : newTotal
-      }
-    }
-  }
-
   //REMOVE FROM CART function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   if(action.type === REMOVE_ITEM){
     let itemToRemove= state.cartItems.find(item=> action.id === item.id)
