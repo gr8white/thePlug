@@ -8,7 +8,7 @@ class HomeComponent extends Component {
 
   render(){
     return (
-    <div className="box ">
+    <div className="box" key={this.props.id}>
       <h1 className="title is-1">{this.props.title}</h1>
       <div className="columns is-multiline">
       {this.props.title == "Shop" ? shuffle(this.props.sneakers).slice(0, 4).map(item=>
@@ -17,11 +17,11 @@ class HomeComponent extends Component {
           addRemovePhrase="Add To"
           rotationButton= {true}
         />)
-      :this.props.title == "Blog" ? this.props.blogs.slice(0, 4).map(item=>
+      :this.props.title == "Blog" ? this.props.news.slice(0, 4).map(item=>
         <BlogCard 
           {...item}
         />)
-      :this.props.releases.slice(0, 4).map(item=>
+      :this.props.news.slice(0, 4).map(item=>
         <BlogCard 
           {...item}
         />)
@@ -35,18 +35,8 @@ class HomeComponent extends Component {
 const mapStateToProps = (state) => {
   return {
     sneakers: state.sneakers.items,
-    blogs: state.blogs.items,
-    releases:state.releases.items
+    news:state.news.posts
   }
 }
 
 export default connect(mapStateToProps, null)(HomeComponent)
-
-{/* {this.props.items.length ?
-              this.props.items.map( (item) =>
-              <CartItem
-                {...item}
-                onPress={() => this.props.handleRemove()} />
-              ) : (<p>Please add something to your cart.</p>)}
-
-{/*    */}
