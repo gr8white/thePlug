@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import * as contentful from 'contentful'
 import NewsCard from './NewsCard';
-import PageHeader from './PageHeader'
+import Header from './Header'
 
 export class News extends Component {
 
@@ -28,7 +28,7 @@ export class News extends Component {
     return (
 
     <div className="page-wrapper">
-      <PageHeader />
+      <Header />
       <div className="columns is-centered">
         <div className="column is-11" >
           <div className="columns topSpace">

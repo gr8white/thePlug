@@ -37,7 +37,7 @@ class MyRotation extends Component{
 }
 const mapStateToProps = (state) => {
   return {
-    items: state.rotationItems
+    items: state.sneakers.rotationItems
   }
 }
 

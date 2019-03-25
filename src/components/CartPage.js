@@ -23,7 +23,7 @@ class Cart extends Component{
     return(
       <div className="page-wrapper" style={{marginTop: 3.5 + 'rem'}}>
         <div className="columns is-centered">
-          <div className="column is-8" style={{marginTop: 56 + 'px'}}>
+          <div className="column is-8">
             <div className="columns topSpace">
               <div className="column">
                 <div className="box sneakerCardHolder">
@@ -51,7 +51,7 @@ class Cart extends Component{
 
 const mapStateToProps = (state)=>{
   return{
-    items: state.cart.cartItems
+    items: state.sneakers.cartItems
   }
 }
 const mapDispatchToProps = (dispatch)=>{
