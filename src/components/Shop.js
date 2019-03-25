@@ -36,7 +36,7 @@ class Shop extends Component{
 }
 const mapStateToProps = (state) => {
   return {
-    items: state.sneakers.items
+    items: state.sneakers.sneakers
   }
 }
 

@@ -34,19 +34,10 @@ class HomeComponent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    sneakers: state.sneakers.items,
-    blogs: state.blogs.items,
-    releases:state.releases.items
+    sneakers: state.sneakers.sneakers,
+    blogs: state.news.posts,
+    releases:state.sneakers.releases.items
   }
 }
 
 export default connect(mapStateToProps, null)(HomeComponent)
-
-{/* {this.props.items.length ?
-              this.props.items.map( (item) =>
-              <CartItem
-                {...item}
-                onPress={() => this.props.handleRemove()} />
-              ) : (<p>Please add something to your cart.</p>)}
-
-{/*    */}

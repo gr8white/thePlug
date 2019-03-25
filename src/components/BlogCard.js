@@ -25,7 +25,7 @@ const BlogCard = (item) => {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.blogs.items
+    items: state.news.posts
   }
 }
 

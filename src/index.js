@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import './index.scss'
 import * as contentful from 'contentful'
-import cartReducer from './components/reducers/cartReducer.js';
+import rootReducer from './components/reducers/rootReducer.js';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-const store = createStore(cartReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 var client = contentful.createClient({
   space: 'ptcc2nvzky4i',

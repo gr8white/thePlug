@@ -1,5 +1,5 @@
-const blogReducer = {
-  items: [
+const initState = {
+  posts: [
     {
       id:1,
       title:'The 5 Best Sneaker Apps to Stay on Top of Every Drop in 2019',
@@ -25,4 +25,8 @@ const blogReducer = {
   ]
 }
 
-export default blogReducer
+const newsReducer = (state = initState)=> {
+  return state
+}
+
+export default newsReducer
