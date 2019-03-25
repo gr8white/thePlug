@@ -5,7 +5,7 @@ import Shop from './Shop'
 import Cart from './CartPage'
 import MyRotation from './MyRotation'
 import Home from './Home'
-import News from './News'
+import News from './NewsPage'
 
 
 class App extends Component {

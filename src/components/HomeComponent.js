@@ -35,7 +35,7 @@ class HomeComponent extends Component {
 const mapStateToProps = (state) => {
   return {
     sneakers: state.sneakers.sneakers,
-    blogs: state.news.posts,
+    news: state.news.posts,
     releases:state.sneakers.releases.items
   }
 }

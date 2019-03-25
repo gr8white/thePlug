@@ -17,8 +17,9 @@ class Shop extends Component{
                 <div className="box ">
                   <h1 className="title is-1">Shop</h1>
                   <div className="columns is-multiline">
-                  {this.props.items.map(item=>
+                  {this.props.items.map((item, i)=>
                     <SneakerCard 
+                      key={i}
                       {...item}
                       addRemovePhrase="Add To"
                       rotationButton= {true}
