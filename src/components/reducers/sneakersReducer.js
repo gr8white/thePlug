@@ -48,8 +48,10 @@ import Item47 from '../images/sneaker-images/versaceChainReaction.jpg'
 import Item48 from '../images/sneaker-images/yeezy700.jpg'
 import Item49 from '../images/sneaker-images/yeezyStatic.jpg'
 import Item50 from '../images/sneaker-images/yeezyBoost750OG.jpg'
+import { ADD_TO_CART,ADD_TO_ROTATION, REMOVE_FROM_ROTATION } from '../actions/sneakerActions'
 
-const itemsReducer = {
+
+const initState = {
   items: [
     {id:1,title:'Adidas Alexander Wang', price:200, img:Item1},
     {id:2,title:'Adidas Neighborhood', price:200, img:Item2},
@@ -105,7 +107,57 @@ const itemsReducer = {
   addRemovePhrase: ""
 } 
 
-export default itemsReducer
+const sneakersReducer = (state = initState, action)=>{
+  //ADD TO ROTATION function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if(action.type === ADD_TO_ROTATION){
+    let newItem = state.sneakers.items.find(item=> item.id === action.id)
+    //check if the action id exists in the rotationItems
+    let existed_item = state.rotationItems.find(item => action.id === item.id)
+    if(existed_item) {
+      return
+    } else {
+      newItem.quantity = 1; 
+      return{
+        ...state,
+        rotationItems: [...state.rotationItems, newItem]
+      }
+    }
+  }
 
+  //REMOVE FROM ROTATION function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if(action.type === REMOVE_FROM_ROTATION){
+    let itemToRemove= state.rotationItems.find(item=> action.id === item.id)
+    let new_items = state.rotationItems.filter(item=> action.id !== item.id)
+    console.log(itemToRemove)
+    return{
+      ...state,
+      rotationItems: new_items
+    }
+  }
 
+  //ADD TO CART function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if(action.type === ADD_TO_CART){
+    let newItem = state.sneakers.items.find(item=> item.id === action.id)
+    //check if the action id exists in the cartItems
+    let existed_item = state.cartItems.find(item => action.id === item.id)
+    if(existed_item) {
+      newItem.quantity += 1 
+      return{
+        ...state,
+        total: state.total + newItem.price 
+      }
+    } else {
+      newItem.quantity = 1;
+      //calculating the total
+      let newTotal = state.total + newItem.price  
+      return{
+        ...state,
+        cartItems: [...state.cartItems, newItem],
+        total : newTotal
+      }
+    }
+  }
+  return state
+}
 
+export default sneakersReducer

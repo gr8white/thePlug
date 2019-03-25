@@ -25,7 +25,7 @@ const initState = {
   ]
 }
 
-const newsReducer = (state = initState)=> {
+const newsReducer = (state = initState)=>{
   return state
 }
 
