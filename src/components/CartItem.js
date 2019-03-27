@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { removeItem, addQuantity, subtractQuantity } from './actions/cartActions'
+import { removeItem, addQuantity, subtractQuantity } from '../reducers/actions/cartActions'
 
 const CartItem = (item) => {
   

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addToCart, addToRotation, removeFromRotation } from './actions/sneakerActions'
+import { addToCart, addToRotation, removeFromRotation } from '../reducers/actions/sneakerActions'
 import { connect } from 'react-redux'
 
 const SneakerCard = (item) => {
@@ -20,7 +20,8 @@ const SneakerCard = (item) => {
     return (
       <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleAddToRotation(item.id)}}>
         {item.addRemovePhrase}  Rotation
-    </p> )
+      </p> 
+    )
   }
 
   let RemoveFromRotationButton = (props) => {

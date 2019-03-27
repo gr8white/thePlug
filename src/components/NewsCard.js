@@ -22,6 +22,7 @@ class NewsCard extends React.Component {
   }
   
   render(){
+    console.log(this.props)
     return (
       <div className="column is-one-third modal-button" data-target="modal-card">
         <div className="card is-shady newsCard">
@@ -33,7 +34,7 @@ class NewsCard extends React.Component {
           <div className="card-content"  style={{height: 256 + 'px'}}>
             <div className="content newsCardContent">
               <h4>{this.props.title}</h4>
-              <Markdown source={this.props.content.split(" ").splice(1,20).join(" ").concat('...')} />
+              <Markdown source={(this.props.content || '' ).split(" ").splice(1,20).join(" ").concat('...')} />
               <span className="button is-link modal-button" onClick={this.toggleModal}>Read Story</span>
             </div>
           </div>
