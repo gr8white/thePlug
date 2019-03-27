@@ -44,7 +44,7 @@ const SneakerCard = (item) => {
     <div className="column is-3" key={item.id}>
       <div className="card sneakerCard">
         <figure className="image sneakerPhoto is-5by3">
-          <img src={item.img} alt={item.title}/>
+          <img src={item.image} alt={item.title}/>
         </figure>
         <div className="card-content" style={{height: 111 + 'px'}}>
           <p className="title is-5">{item.title}</p>

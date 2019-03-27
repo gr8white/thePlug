@@ -12,8 +12,8 @@ export default class Home extends Component {
           <div className="column is-11" >
             <div className="columns topSpace">
               <div className="column">
-                <HomeComponent title="News" index="1"/>
-                <HomeComponent title="Shop" index="2"/>
+                <HomeComponent title="Shop" index="1"/>
+                <HomeComponent title="News" index="2"/>
                 <HomeComponent title="Release Dates" index="3"/>
               </div>
             </div>

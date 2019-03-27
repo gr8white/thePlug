@@ -14,13 +14,13 @@ class Shop extends Component{
                 <FilterBar/>
               </div>
               <div className="column is-three-quarters">
-                <div className="box ">
+                <div className="box " display="block">
                   <h1 className="title is-1">Shop</h1>
                   <div className="columns is-multiline">
-                  {this.props.items.map((item, i)=>
+                  {this.props.items.map(({fields}, i)=>
                     <SneakerCard 
                       key={i}
-                      {...item}
+                      {...fields}
                       addRemovePhrase="Add To"
                       rotationButton= {true}
                     />
