@@ -22,7 +22,6 @@ class NewsCard extends React.Component {
   }
   
   render(){
-    console.log(this.props)
     return (
       <div className="column is-one-third modal-button" data-target="modal-card">
         <div className="card is-shady newsCard">

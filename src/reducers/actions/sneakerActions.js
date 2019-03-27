@@ -1,6 +1,14 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const ADD_TO_ROTATION = 'ADD_TO_ROTATION';
 export const REMOVE_FROM_ROTATION = 'REMOVE_FROM_ROTATION';
+export const SET_SNEAKERS = 'SET_SNEAKERS';
+
+export const setSneakers=(response)=>{
+  return{
+    type: SET_SNEAKERS,
+    response
+  }
+}
 
 export const addToCart= (id)=>{
   return{

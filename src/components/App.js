@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import * as contentful from 'contentful'
-import rootReducer from '../reducers/rootReducer'
 import Navbar from './Navbar'
 import Shop from './Shop'
 import Cart from './CartPage'
@@ -10,7 +9,7 @@ import Home from './Home'
 import News from './NewsPage'
 import { connect } from 'react-redux';
 import {setPosts} from '../reducers/actions/newsActions'
-
+import {setSneakers} from '../reducers/actions/sneakerActions'
 
 class App extends Component {
 
@@ -20,15 +19,11 @@ class App extends Component {
   })
 
   componentWillMount() {
-    this.fetchPosts().then(this.props.setPosts);
+    this.fetchPosts('thePlugBlogs').then(this.props.setPosts);
+    this.fetchPosts('thePlugSneakers').then(this.props.setSneakers);
   }
 
-  fetchPosts = () =>  this.client.getEntries()
-
-  // setPosts = (response) => {
-  //   // setPosts(response.items)
-  //   console.log(response.items)
-  // }
+  fetchPosts = (content_type) =>  this.client.getEntries({'content_type':(content_type)})
 
   render() {
     return (
@@ -50,13 +45,15 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    news: state.news.posts
+    news: state.news.posts,
+    sneakers: state.sneakers.sneakers
   }
 }
 
 const mapDispatchToProps = (dispatch) =>{
   return {
-    setPosts: (response)=> dispatch(setPosts(response))
+    setPosts: (response)=> {dispatch(setPosts(response)); console.log(response)},
+    setSneakers: (response)=> {dispatch(setSneakers(response)); console.log(response)}
   }
 }
 

@@ -30,7 +30,7 @@ class Cart extends Component{
                   <h5 className='title'>Your Cart</h5>
                   <div className="columns is-centered">
                     <div className="column">   
-                        {this.props.items.length ?
+                        {this.props.items && this.props.items.length ?
                           this.props.items.map( (item) =>
                           <CartItem
                             {...item}

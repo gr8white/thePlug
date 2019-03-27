@@ -14,7 +14,7 @@ class HomeComponent extends Component {
       <div className="columns is-multiline">
       {this.props.title == "Shop" ? shuffle(this.props.sneakers).slice(0, 4).map(item=>
         <SneakerCard 
-          {...item}
+          {...item.fields}
           addRemovePhrase="Add To"
           rotationButton= {true}
         />)
@@ -37,7 +37,7 @@ const mapStateToProps = (state) => {
   return {
     sneakers: state.sneakers.sneakers,
     news: state.news.posts,
-    releases:state.sneakers.releases.items
+    // releases:state.sneakers.releases.items
   }
 }
 

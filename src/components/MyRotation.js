@@ -17,7 +17,7 @@ class MyRotation extends Component{
                 <div className="box sneakerCardHolder" display="block">
                   <h1 className="title ">My Rotation</h1>
                   <div className="columns is-multiline">
-                  {this.props.items.length ?
+                  {this.props.items && this.props.items.length ?
                     this.props.items.map( (item) =>
                     <SneakerCard
                       {...item} 
