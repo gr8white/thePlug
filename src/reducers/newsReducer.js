@@ -1,3 +1,5 @@
+import {SET_POSTS} from './actions/newsActions'
+
 const initState = {
   posts: [
     {
@@ -25,7 +27,13 @@ const initState = {
   ]
 }
 
-const newsReducer = (state = initState)=>{
+const newsReducer = (state = initState, action)=>{
+  if(action.type === SET_POSTS) {
+    return {
+      posts: action.response.items
+    }
+  }
+  
   return state
 }
 

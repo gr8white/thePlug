@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BlogCard from './BlogCard'
 import SneakerCard from './SneakerCard'
+import NewsCard from './NewsCard'
 import shuffle from './functions/functions'
 
 class HomeComponent extends Component {
@@ -17,9 +18,9 @@ class HomeComponent extends Component {
           addRemovePhrase="Add To"
           rotationButton= {true}
         />)
-      :this.props.title == "Blog" ? this.props.news.slice(0, 4).map(item=>
-        <BlogCard 
-          {...item}
+      :this.props.title == "News" ? this.props.news.slice(0, 3).map(item=>
+        <NewsCard 
+          {...item.fields}
         />)
       :this.props.news.slice(0, 4).map(item=>
         <BlogCard 
