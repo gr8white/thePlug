@@ -16,7 +16,7 @@ const CartItem = (item) => {
           <button className="delete is-large level-item" onClick={()=>{handleClick(item.id)}}/>
           <div className="level-item">
             <figure className="image is-128x128 sneakerPhoto"> 
-              <img src={item.img} alt={item.img} className="" style={{flexShrink: 0, minWidth: '100%'}}/>
+              <img src={item.image} alt={item.image} className="" style={{flexShrink: 0, minWidth: '100%'}}/>
             </figure>
           </div>
           <p className="sneakerName is-5 level-item">{item.title}</p>

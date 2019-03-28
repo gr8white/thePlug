@@ -114,9 +114,11 @@ const initState = {
 }
 const sneakerReducer = (state = initState, action)=>{
   if(action.type === SET_SNEAKERS) {
+    let newArray = []
+    action.response.items.map((item) => newArray.push(item.fields))
     return {
       ...state,
-      sneakers: action.response.items
+      sneakers: newArray
     }
   }
   
