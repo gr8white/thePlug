@@ -17,10 +17,10 @@ class Shop extends Component{
                 <div className="box " display="block">
                   <h1 className="title is-1">Shop</h1>
                   <div className="columns is-multiline">
-                  {this.props.items.map(({fields}, i)=>
+                  {this.props.items.map((item, i)=>
                     <SneakerCard 
                       key={i}
-                      {...fields}
+                      {...item}
                       addRemovePhrase="Add To"
                       rotationButton= {true}
                     />
