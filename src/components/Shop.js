@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import SneakerCard from './SneakerCard';
 import FilterBar from './FilterBar'
+import shuffle from './functions/functions'
 
 class Shop extends Component{
   render(){
@@ -17,7 +18,7 @@ class Shop extends Component{
                 <div className="box " display="block">
                   <h1 className="title is-1">Shop</h1>
                   <div className="columns is-multiline">
-                  {this.props.items.map((item, i)=>
+                  {shuffle(this.props.items).map((item, i)=>
                     <SneakerCard 
                       key={i}
                       {...item}

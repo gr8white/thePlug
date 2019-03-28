@@ -18,7 +18,7 @@ class HomeComponent extends Component {
           addRemovePhrase="Add To"
           rotationButton= {true}
         />)
-      :this.props.title == "News" ? this.props.news.slice(0, 3).map(item=>
+      :this.props.title == "News" ? shuffle(this.props.news).slice(0, 3).map(item=>
         <NewsCard 
           {...item.fields}
         />)
