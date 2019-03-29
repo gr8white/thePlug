@@ -1,71 +1,106 @@
 import React, { Component } from 'react'
 import { addToCart, addToRotation, removeFromRotation } from '../reducers/actions/sneakerActions'
 import { connect } from 'react-redux'
+import NewsModal from './NewsModal'
 
-const SneakerCard = (item) => {
+let AddToRotationButton = (props) => {
+  return (
+    <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{props.addToRotation(props.id)}}>
+      {props.addRemovePhrase}  Rotation
+    </p> 
+  )
+}
+
+let RemoveFromRotationButton = (props) => {
+  return (
+    <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{props.removeFromRotation(props.id)}}>
+      {props.addRemovePhrase} <br/> Rotation
+  </p> )
+}
+
+let WhichButton = (props) => {
+  const rotationButton = props.rotationButton;
+  if (rotationButton) {
+    return <AddToRotationButton {...props}/>
+  } else {
+    return <RemoveFromRotationButton {...props}/>
+  }
+}
+
+class SneakerCard extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      modalState: false
+    };
+    
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  toggleModal() {    
+    this.setState((prev, props) => {
+      const newState = !prev.modalState;
+      
+      return { modalState: newState };
+    });
+  }
+
+  handleAddToCart = (id) => {
+    this.props.addToCart(id);
+  }
+
+  // handleAddToCart() {
+  //   this.props.addToCart
+  // }
+
+  handleAddToRotation = (id) => {
+    this.props.addToRotation(id);
+  }
+
+  handleRemoveFromRotation = (id) => {
+    this.props.removeFromRotation(id);
+  }
+
   
-  let handleAddToCart = (id) => {
-    item.addToCart(id);
-  }
-
-  let handleAddToRotation = (id) => {
-    item.addToRotation(id);
-  }
-
-  let handleRemoveFromRotation = (id) => {
-    item.removeFromRotation(id);
-  }
-
-  let AddToRotationButton = (props) => {
+  render() {
     return (
-      <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleAddToRotation(item.id)}}>
-        {item.addRemovePhrase}  Rotation
-      </p> 
+      <div className="column is-3 modal-button" key={this.props.id} data-target="modal-card">
+        <div className="card sneakerCard">
+          <figure className="image sneakerPhoto is-5by3" onClick={()=>{this.toggleModal()}}>
+            <img src={this.props.image} alt={this.props.title} />
+          </figure>
+          <div className="card-content" style={{height: 111 + 'px'}}>
+            <p className="title is-5">{this.props.title}</p>
+            <p className="subtitle is-7"><b>Price: ${this.props.price}</b></p>
+          </div>
+          <footer className="card-footer">
+            <WhichButton
+              rotationButton={this.props.rotationButton}
+              {...this.props}
+            />
+            <p className="card-footer-item button is-white cart-icon" style={{height: 48 + 'px'}} onClick={()=>{this.handleAddToCart(this.props.id)}}>
+              <span>
+                <i className="fa fa-shopping-cart"></i>
+              </span>
+            </p>
+          </footer>
+        </div>
+        <NewsModal 
+          closeModal={this.toggleModal} 
+          modalState={this.state.modalState} 
+          title={this.props.title}
+          image={this.props.image}
+        />
+      </div>
     )
   }
-
-  let RemoveFromRotationButton = (props) => {
-    return (
-      <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{handleRemoveFromRotation(item.id)}}>
-        {item.addRemovePhrase} <br/> Rotation
-    </p> )
-  }
-
-  let WhichButton = (props) => {
-    const rotationButton = props.rotationButton;
-    if (rotationButton) {
-      return <AddToRotationButton />
-    } else {
-      return <RemoveFromRotationButton />
-    }
-  }
-
-  return (
-    <div className="column is-3" key={item.id}>
-      <div className="card sneakerCard">
-        <figure className="image sneakerPhoto is-5by3">
-          <img src={item.image} alt={item.title}/>
-        </figure>
-        <div className="card-content" style={{height: 111 + 'px'}}>
-          <p className="title is-5">{item.title}</p>
-          <p className="subtitle is-7"><b>Price: ${item.price}</b></p>
-        </div>
-        <footer className="card-footer">
-          <WhichButton rotationButton={item.rotationButton}/>
-          <p className="card-footer-item button is-white cart-icon" style={{height: 48 + 'px'}} onClick={()=>{handleAddToCart(item.id)}}>
-            <span>
-              <i className="fa fa-shopping-cart"></i>
-            </span>
-          </p>
-        </footer>
-      </div>
-    </div>
-  )
+  
 }
 
 const mapStateToProps = (state) => {
   return {
-    items: state.sneakers.items
+    items: state.sneakers.sneakers
   }
 }
 const mapDispatchToProps = (dispatch)=>{
