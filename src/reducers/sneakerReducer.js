@@ -8,10 +8,7 @@ const initState = {
   addRemovePhrase: "",
   rotationItems: [],
   cartItems:[],
-  total: 0,
-  filters: [
-    {id: 'jordan', inuse: false}
-  ]
+  total: 0
 }
 const sneakerReducer = (state = initState, action)=>{
   if(action.type === SET_SNEAKERS) {

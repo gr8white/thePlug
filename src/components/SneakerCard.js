@@ -5,7 +5,7 @@ import NewsModal from './NewsModal'
 
 let AddToRotationButton = (props) => {
   return (
-    <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{props.addToRotation(props.id)}}>
+    <p className="card-footer-item button is-white has-text-centered rotationButton" id="rotationButton" onClick={()=>{props.addToRotation(props.id)}}>
       {props.addRemovePhrase}  Rotation
     </p> 
   )
@@ -13,7 +13,7 @@ let AddToRotationButton = (props) => {
 
 let RemoveFromRotationButton = (props) => {
   return (
-    <p className="card-footer-item button is-white has-text-centered rotationButton" onClick={()=>{props.removeFromRotation(props.id)}}>
+    <p className="card-footer-item button is-white has-text-centered rotationButton" id="rotationButton" onClick={()=>{props.removeFromRotation(props.id)}}>
       {props.addRemovePhrase} <br/> Rotation
   </p> )
 }
