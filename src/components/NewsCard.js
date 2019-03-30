@@ -26,7 +26,7 @@ class NewsCard extends React.Component {
       <div className="column is-one-third modal-button" data-target="modal-card">
         <div className="card is-shady newsCard">
           <div className="card-image">
-            <figure className="image is-4by3">
+            <figure className="image is-4by3" onClick={this.toggleModal}>
               <img src={this.props.icon} alt="Placeholder image" className="newsCardImage" style={{objectFit: 'cover'}}/>
             </figure>
           </div>

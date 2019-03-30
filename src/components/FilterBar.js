@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import bulmaAccordion from 'bulma-extensions/bulma-accordion/src/js/index.js'
+import { connect } from 'react-redux';
+import {sortByMaxPrice, sortByMinPrice, setBrand, setColor, setSize} from '../reducers/actions/filterActions'
 
 class FilterBar extends Component{
 
@@ -7,17 +9,32 @@ class FilterBar extends Component{
     bulmaAccordion.attach()
   }
 
+  handleSortByMaxPrice = () => { this.props.startSortByMaxPrice(); }
+
+  handleSortByMinPrice = () => { this.props.startSortByMinPrice(); }
+
+  handleSetBrand = (e) => { this.props.startSetBrand(e.target.value); }
+
+  handleSetColor = (e) => { this.props.startSetColor(e.target.value); }
+
+  handleSetSize = (e) => { this.props.startSetSize(e.target.value); }
+
+  handleResetFilter = () => {
+    document.getElementById("filterForm").reset();
+    console.log("filters reset")
+  }
+
   render(){
     return (
       <div className="box filterBar">
         <h5 className="title is-5">Filters</h5>
-        <section className="accordions is-fixed-top" style={{width: 100 + '%'}}>
+        <form className="accordions is-fixed-top" id="filterForm" style={{width: 100 + '%'}}>
           <article className="accordion is-primary">
             <div className="accordion-header toggle">
               <p>Brand</p>
             </div>
             <div className="accordion-body">
-              <div className="accordion-content">
+              <div className="accordion-content" id="filter-brand-input" onChange={this.handleSetBrand}>
                 <div className="columns">
                   <div className="column">
                     <label className="checkbox">
@@ -68,7 +85,7 @@ class FilterBar extends Component{
               <p>Color</p>
             </div>
             <div className="accordion-body">
-              <div className="accordion-content">
+              <div className="accordion-content" id="filter-color-input" onChange={this.handleSetColor}>
                 <div className="columns">
                   <div className="column">
                     <label className="checkbox">
@@ -118,8 +135,8 @@ class FilterBar extends Component{
             <div className="accordion-header toggle">
               <p>Size</p>
             </div>
-            <div className="accordion-body">
-              <div className="buttons sizeButtons" >
+            <div className="accordion-body" >
+              <div className="buttons sizeButtons" onClick={this.handleSetSize}>
                 <span className="button is-primary is-outlined">7</span>
                 <span className="button is-primary is-outlined">7.5</span>
                 <span className="button is-primary is-outlined">8</span>
@@ -141,39 +158,31 @@ class FilterBar extends Component{
             </div>
             <div className="accordion-body">
               <div className="accordion-content">
-                <label className="checkbox">
-                  <input type="checkbox"/>
-                  $1000 +
-                </label>
-                <br/>
-                <label className="checkbox">
-                  <input type="checkbox"/>
-                  $500 - $999
-                </label>
-                <br/>
-                <label className="checkbox">
-                  <input type="checkbox"/>
-                  $350 - $499
-                </label>
-                <br/>
-                <label className="checkbox">
-                  <input type="checkbox"/>
-                  $100 - $349
-                </label>
-                <br/>
-                <label className="checkbox">
-                  <input type="checkbox"/>
-                  Under $99
-                </label>
+              <span className="button is-primary is-outlined" onClick={this.handleSortByMinPrice}>Price Low to High</span>
+                <span className="button is-primary is-outlined" onClick={this.handleSortByMaxPrice}>Price High to Low</span>
               </div>
             </div>
           </article>
-        </section>
-        <button className="button is-fullwidth is-primary" style={{marginTop: 20 + 'px'}}>Set Filters</button>
+        </form>
+        <button className="button is-fullwidth is-primary" style={{marginTop: 20 + 'px'}} onClick={this.handleResetFilter}>Reset Filters</button>
       </div>
     )
   }
 }
 
-export default FilterBar
+// const mapStateToProps = (state) => {
+//   return {
+//     products: selectProducts(state.sneakers.sneakers, state.filters),
+//   };
+// };
+
+const mapDispatchToProps = (dispatch) => ({
+  startSortByMaxPrice: () => dispatch(sortByMaxPrice()),
+  startSortByMinPrice: () => dispatch(sortByMinPrice()),
+  startSetBrand: (brand) => dispatch(setBrand(brand)),
+  startSetColor: (color) => dispatch(setColor(color)),
+  startSetSize: (size) => dispatch(setSize(size))
+});
+
+export default connect(null, mapDispatchToProps)(FilterBar)
 
