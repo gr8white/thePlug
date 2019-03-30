@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { addToCart, addToRotation, removeFromRotation } from '../reducers/actions/sneakerActions'
 import { connect } from 'react-redux'
-import NewsModal from './NewsModal'
+import SneakerModal from './SneakerModal'
 
 let AddToRotationButton = (props) => {
   return (
@@ -86,7 +86,7 @@ class SneakerCard extends Component {
             </p>
           </footer>
         </div>
-        <NewsModal 
+        <SneakerModal 
           closeModal={this.toggleModal} 
           modalState={this.state.modalState} 
           title={this.props.title}
