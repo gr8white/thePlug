@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# thePlug - Sneaker Appa and Blog
 
-## Available Scripts
+This project was built as a final project upon completing coding bootcamp with DigitalCrafts Houston. The project was to build an app that showcased our strengths and what we've learned throughout the duration of the bootcamp. 
 
-In the project directory, you can run:
+## Purpose
 
-### `npm start`
+I chose my languages used to build this site based on the kind of projects I could see myself building in the future and I chose the theme of sneakers because I knew that it would be aesthetically pleasing to the viewers at our final demo day. This project was an extension of my previously built project [react-redux-Sneakerapp](https://github.com/gr8white/react-redux-SneakerApp). 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+These are the technologies used to build this app:
 
-### `npm test`
+* [React](https://reactjs.org) - A JavaScript library for building user interfaces
+* [Redux](https://redux.js.org) - A predictable state container for JavaScript apps
+* [Bulma](https://bulma.io) - An open source CSS framework based on Flexbox
+* [Adobe Comp CC](https://www.adobe.com/products/comp.html) - Layout development tool
+* [Contentful](contentful.com) - Web content management database
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Deployment
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A live demo has been deployed at [here](https://gr8white.github.io/thePlug).
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Final Comments
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+When I first started brainstorming, I wanted to build a lot more into this project. I wanted to have working filters, user authentication, updated quantities after the checkout process, and a few other ideas that are listed here in my [project board](https://github.com/users/gr8white/projects/1) for the app. While I didn't finish all of my goals, I was able to walk away from this project knowing that my time spent was an amazing learning experience as a web developer. I spent the vast majority of my time debugging and rewriting sloppy code as I had to learn new components and approaches to React and Redux. In the end, I am proud of the developer that I became after completing this project and after completing the DigitalCrafts Bootcamp.
